@@ -30,9 +30,8 @@ public class Rio {
         this.poluido = true;
     }
     public void exibirDados(){
-        String msg = (this.poluido)? "Sim": "Não";
         JOptionPane.showMessageDialog(null, "Nome do rio: " + this.nome + 
                 "\nNível do rio: " + this.nivel + 
-                "\nO rio está poluido?: " + msg);
+                "\nO rio está poluido?: " + (this.poluido ? "Sim": "Não"));
     }
 }

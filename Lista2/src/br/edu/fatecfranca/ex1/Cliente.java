@@ -51,5 +51,27 @@ public class Cliente {
         return this.Nome;
     }
     
+    public void realizarDeposito(float valor){
+        this.Saldo += valor;
+    }
+    
+    public void realizarSaque(float valor){
+        this.Saldo -= valor;
+    }
+    
+    public void dados(){
+        System.out.println("Nome: " + this.Nome + "\nNum. Agêcia: " + this.NumAgencia + "\nNum. Conta: " + this.NumConta +
+            "\nSaldo: " + this.Saldo);
+    }
+    Cliente(){
+        
+    }
+    Cliente(String nome, String agencia, String conta, float saldo){
+        this.setNome(nome);
+        this.setNumAgencia(agencia);
+        this.setNumConta(conta);
+        this.setSaldo(saldo);
+    }
+    
     
 }

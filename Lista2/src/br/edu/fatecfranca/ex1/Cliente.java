@@ -1,11 +1,21 @@
 
 package br.edu.fatecfranca.ex1;
 
-public class Cliente {
+public final class Cliente {
     private String NumConta;
     private String NumAgencia;
     private String Nome;
     private float Saldo;
+    
+    Cliente(){
+        
+    }
+    Cliente(String nome, String agencia, String conta, float saldo){
+        this.setNome(nome);
+        this.setNumAgencia(agencia);
+        this.setNumConta(conta);
+        this.setSaldo(saldo);
+    }
     
     public void setNumConta(String numConta){
         if((numConta.length() == 8) && (numConta.charAt(6) == '-')){
@@ -52,26 +62,18 @@ public class Cliente {
     }
     
     public void realizarDeposito(float valor){
-        this.Saldo += valor;
+        setSaldo(this.Saldo - valor);
     }
     
     public void realizarSaque(float valor){
-        this.Saldo -= valor;
+        setSaldo(this.Saldo + valor);
     }
     
     public void dados(){
-        System.out.println("Nome: " + this.Nome + "\nNum. Agêcia: " + this.NumAgencia + "\nNum. Conta: " + this.NumConta +
-            "\nSaldo: " + this.Saldo);
+        System.out.println("Nome: " + getNome() + "\nNum. Agêcia: " + getNumAgencia() + "\nNum. Conta: " + getNumConta() +
+            "\nSaldo: " + getSaldo());
     }
-    Cliente(){
-        
-    }
-    Cliente(String nome, String agencia, String conta, float saldo){
-        this.setNome(nome);
-        this.setNumAgencia(agencia);
-        this.setNumConta(conta);
-        this.setSaldo(saldo);
-    }
+    
     
     
 }
